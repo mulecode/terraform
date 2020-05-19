@@ -1,0 +1,5 @@
+region = "eu-west-2"
+name = "acme"
+cidr = "172.10.0.0/20"
+domainName = "acme.com"
+lbDomainName = "service.acme.com"
