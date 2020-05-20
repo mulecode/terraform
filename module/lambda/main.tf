@@ -1,5 +1,6 @@
 resource "aws_lambda_function" "main" {
   function_name = var.name
+  description = var.description
   role = aws_iam_role.main.arn
   filename = var.file_name
   source_code_hash = var.source_code_hash

@@ -1,4 +1,5 @@
 variable "name" {}
+variable "description" {}
 variable "file_name" {}
 variable "source_code_hash" {}
 variable "runtime" {}
