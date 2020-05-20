@@ -12,6 +12,16 @@ resource "aws_lambda_function" "main" {
   environment {
     variables = var.environment_variables
   }
+
+  depends_on = [
+    aws_iam_policy_attachment.main,
+    aws_cloudwatch_log_group.main
+  ]
+}
+
+resource "aws_cloudwatch_log_group" "main" {
+  name = "/aws/lambda/${var.name}"
+  retention_in_days = 7
 }
 
 resource "aws_iam_policy_attachment" "main" {
