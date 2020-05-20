@@ -6,7 +6,7 @@ variable "handler" {}
 variable "event_source_arn" {}
 
 variable "environment_variables" {
-  type = "map"
+  type = map(string)
   default = {}
 }
 
