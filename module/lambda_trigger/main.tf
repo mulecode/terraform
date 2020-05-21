@@ -4,7 +4,7 @@ module "lambda" {
   description = var.description
   file_name = var.file_name
   source_code_hash = var.source_code_hash
-  iam_role = var.iam_policy
+  iam_policy = var.iam_policy
   runtime = var.runtime
   handler = var.handler
   environment_variables = var.environment_variables
