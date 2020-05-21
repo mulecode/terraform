@@ -5,6 +5,10 @@ variable "source_code_hash" {}
 variable "runtime" {}
 variable "handler" {}
 
+variable "timeout_seconds" {
+  default = 60
+}
+
 variable "environment_variables" {
   type = map(string)
   default = {}

@@ -6,7 +6,7 @@ resource "aws_lambda_function" "main" {
   source_code_hash = var.source_code_hash
   runtime = var.runtime
   handler = var.handler
-  timeout = 300
+  timeout = var.timeout_seconds
   memory_size = 256
 
   environment {

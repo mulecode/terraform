@@ -7,6 +7,7 @@ module "lambda" {
   iam_policy = var.iam_policy
   runtime = var.runtime
   handler = var.handler
+  timeout_seconds = var.timeout_seconds
   environment_variables = var.environment_variables
 }
 

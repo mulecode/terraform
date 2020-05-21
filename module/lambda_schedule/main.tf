@@ -8,6 +8,7 @@ module "lambda" {
   runtime = var.runtime
   handler = var.handler
   environment_variables = var.environment_variables
+  timeout_seconds = var.timeout_seconds
 }
 
 resource "aws_cloudwatch_event_rule" "main" {

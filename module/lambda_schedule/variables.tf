@@ -4,6 +4,11 @@ variable "file_name" {}
 variable "source_code_hash" {}
 variable "runtime" {}
 variable "handler" {}
+
+variable "timeout_seconds" {
+  default = 60
+}
+
 variable "schedule_expression" {}
 
 variable "environment_variables" {
