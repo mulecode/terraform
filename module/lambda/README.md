@@ -2,7 +2,7 @@
 
 Creates a lambda
 
-usage:
+java usage:
 
 ```hcl-terraform
 locals {
@@ -36,5 +36,29 @@ module "lambda_sample" {
   environment_variables = {
     REGION = "eu-west-2"
   }
+}
+```
+
+python usage:
+
+```hcl-terraform
+
+module "lambda_python_sample" {
+  source = "github.com/mulecode/terraform.git//module/lambda"
+  name = "lambda-python-name"
+  file_name = data.archive_file.main.output_path
+  source_code_hash = data.archive_file.main.output_base64sha256
+  iam_policy = local.iam_policy
+  runtime = "python3.7"
+  handler = "handler.handler"
+  environment_variables = {
+    REGION = "eu-west-2"
+  }
+}
+
+data "archive_file" "main" {
+  type        = "zip"
+  source_dir  = "../code/python/out"
+  output_path = "${path.module}/lambda-python-name.zip"
 }
 ```
