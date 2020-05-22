@@ -28,8 +28,7 @@ EOF
 module "lambda_sample" {
   source = "github.com/mulecode/terraform.git//module/lambda"
   name = "lambda-name"
-  file_name = local.artifact_path
-  source_code_hash = base64sha256(file(local.artifact_path))
+  file_path = local.artifact_path
   iam_policy = local.iam_policy
   runtime = "java11"
   handler = "com.acme.ApplicationRequestHandler"
@@ -46,8 +45,7 @@ python usage:
 module "lambda_python_sample" {
   source = "github.com/mulecode/terraform.git//module/lambda"
   name = "lambda-python-name"
-  file_name = data.archive_file.main.output_path
-  source_code_hash = data.archive_file.main.output_base64sha256
+  file_path = data.archive_file.main.output_path
   iam_policy = local.iam_policy
   runtime = "python3.7"
   handler = "handler.handler"

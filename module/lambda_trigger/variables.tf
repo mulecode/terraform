@@ -1,7 +1,6 @@
 variable "name" {}
 variable "description" {}
-variable "file_name" {}
-variable "source_code_hash" {}
+variable "file_path" {}
 variable "runtime" {}
 variable "handler" {}
 

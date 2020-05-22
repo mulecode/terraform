@@ -28,8 +28,7 @@ EOF
 module "lambda_scheduled_sample" {
   source = "github.com/mulecode/terraform.git//module/lambda_schedule"
   name = "lambda-scheduled-name"
-  file_name = local.artifact_path
-  source_code_hash = base64sha256(file(local.artifact_path))
+  file_path = local.artifact_path
   iam_policy = local.iam_policy
   runtime = "java11"
   handler = "com.acme.ApplicationRequestHandler"

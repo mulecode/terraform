@@ -2,8 +2,7 @@ module "lambda" {
   source = "github.com/mulecode/terraform.git//module/lambda"
   name = var.name
   description = var.description
-  file_name = var.file_name
-  source_code_hash = var.source_code_hash
+  file_path = var.file_path
   iam_policy = var.iam_policy
   runtime = var.runtime
   handler = var.handler

@@ -2,8 +2,8 @@ resource "aws_lambda_function" "main" {
   function_name = var.name
   description = var.description
   role = aws_iam_role.main.arn
-  filename = var.file_name
-  source_code_hash = var.source_code_hash
+  filename = var.file_path
+  source_code_hash = base64sha256(filebase64(var.file_path))
   runtime = var.runtime
   handler = var.handler
   timeout = var.timeout_seconds
