@@ -7,7 +7,15 @@ resource "aws_lambda_function" "main" {
   runtime = var.runtime
   handler = var.handler
   timeout = var.timeout_seconds
-  memory_size = 256
+  memory_size = var.memory_size
+  reserved_concurrent_executions = var.concurrent_executions
+
+  vpc_config {
+    security_group_ids = [
+      aws_security_group.main.id
+    ]
+    subnet_ids = var.vpc_subnets
+  }
 
   environment {
     variables = var.environment_variables
@@ -57,4 +65,17 @@ EOF
 resource "aws_iam_policy" "main" {
   name = var.name
   policy = var.iam_policy
+}
+
+resource "aws_security_group" "main" {
+  name = var.name
+  vpc_id = var.vpc_id
+
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = [
+      "0.0.0.0/0"]
+  }
 }

@@ -6,8 +6,12 @@ module "lambda" {
   iam_policy = var.iam_policy
   runtime = var.runtime
   handler = var.handler
-  environment_variables = var.environment_variables
   timeout_seconds = var.timeout_seconds
+  vpc_id = var.vpc_id
+  vpc_subnets = var.vpc_subnets
+  environment_variables = var.environment_variables
+  memory_size = var.memory_size
+  concurrent_executions = var.concurrent_executions
 }
 
 resource "aws_cloudwatch_event_rule" "main" {
