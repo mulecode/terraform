@@ -28,7 +28,7 @@ locals {
       "timeout": 3,
       "retries": 10,
       "startPeriod": 90
-    },
+    }
   }
 ]
 EOF
