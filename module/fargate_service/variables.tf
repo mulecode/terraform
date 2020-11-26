@@ -8,6 +8,7 @@ variable "ecs_execution_role_arn" {}
 variable "lb_arn" {}
 variable "lb_path" {}
 variable "acm_certificate_arn" {}
+variable "health_check_url_path" {}
 
 variable "assign_public_ip" {
   type = bool
