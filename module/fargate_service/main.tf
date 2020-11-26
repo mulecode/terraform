@@ -21,14 +21,7 @@ locals {
       {
         "containerPort": ${var.port}
       }
-    ],
-    "healthCheck": {
-      "command": [ "CMD-SHELL", "curl -f http://localhost:8080${var.health_check_url_path} || exit 1" ],
-      "interval": 6,
-      "timeout": 3,
-      "retries": 10,
-      "startPeriod": 90
-    }
+    ]
   }
 ]
 EOF
