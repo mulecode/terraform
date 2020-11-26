@@ -163,7 +163,10 @@ resource "aws_lb_target_group" "main" {
   target_type = "ip"
   vpc_id = var.vpc_id
   health_check {
-    enabled = false
+    enabled = true
+    interval = 120
+    port = 80
+    path = var.health_check_url_path
   }
 }
 
