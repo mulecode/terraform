@@ -151,14 +151,14 @@ resource "aws_security_group" "main" {
 
 resource "aws_lb_target_group" "main" {
   name = var.service_name
-  port = 80
+  port = var.container_port
   protocol = "HTTP"
   target_type = "ip"
   vpc_id = var.vpc_id
   health_check {
     enabled = true
     interval = 120
-    port = 80
+    port = var.container_port
     path = var.health_check_url_path
   }
 }
