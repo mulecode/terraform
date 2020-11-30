@@ -23,8 +23,8 @@ variable "memory" {
   default = 512
 }
 
-variable "port" {
-  default = 80
+variable "container_port" {
+  default = 8080
 }
 
 variable "min_instances" {

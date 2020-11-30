@@ -19,7 +19,7 @@ locals {
     },
     "portMappings": [
       {
-        "containerPort": ${var.port}
+        "containerPort": ${var.container_port}
       }
     ]
   }
@@ -62,7 +62,7 @@ resource "aws_ecs_service" "main" {
   load_balancer {
     target_group_arn = aws_lb_target_group.main.arn
     container_name = var.service_name
-    container_port = var.port
+    container_port = var.container_port
   }
 
   lifecycle {
@@ -126,8 +126,8 @@ resource "aws_security_group" "main" {
 
   ingress {
     description = "Permit all from outside"
-    from_port = var.port
-    to_port = var.port
+    from_port = var.container_port
+    to_port = var.container_port
     protocol = "tcp"
     cidr_blocks = [
       "0.0.0.0/0"
