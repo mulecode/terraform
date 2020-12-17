@@ -1,13 +1,13 @@
 # ECS Cluster
 
-Creates ECS cluster
+Creates ECS cluster and default execution role
 
 ### Sample:
 
 ```hcl-terraform
-module "public_lb" {
+module "mulecode_fargate_cluster" {
   source = "github.com/mulecode/terraform.git//module/ecs_cluster"
-  name = "services cluster"
+  name = "mulecode-cluster"
   region = "eu-west-2"
 }
 ```
