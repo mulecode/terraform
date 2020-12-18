@@ -47,7 +47,7 @@ resource "aws_ecs_task_definition" "main" {
 resource "aws_ecs_service" "main" {
   name = var.service_name
   cluster = var.cluster_id
-  task_definition = "${aws_ecs_task_definition.main.family}:${aws_ecs_task_definition.main.revision}"
+  task_definition = aws_ecs_task_definition.main.arn
   desired_count = var.min_instances
   launch_type = "FARGATE"
 
