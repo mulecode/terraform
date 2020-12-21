@@ -3,8 +3,8 @@ provider "aws" {
 }
 
 data "aws_ecr_image" "ecr_image" {
-  repository_name = "${var.repository_name}"
-  image_tag = "${var.repository_version}"
+  repository_name = var.service_name
+  image_tag = var.repository_version
 }
 
 locals {
