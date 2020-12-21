@@ -48,8 +48,8 @@ resource "aws_security_group" "main" {
 }
 
 resource "aws_route53_record" "main" {
-  zone_id = var.zoneId
-  name = var.domainName
+  zone_id = var.zone_id
+  name = var.domain_name
   type = "A"
 
   alias {

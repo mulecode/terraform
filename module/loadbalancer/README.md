@@ -8,10 +8,10 @@ Creates an application load balancer to be used within ecs applications
 module "public_lb" {
   source = "github.com/mulecode/terraform.git//module/loadbalancer"
   name = "mulecode-lb"
-  zoneId = data.aws_route53_zone.selected.id
+  zone_id = data.aws_route53_zone.selected.id
   subnets = [subnets]
   vpc_id = "VPC ID"
-  domainName = "foo.yourdomain.com"
+  domain_name = "foo.yourdomain.com"
 }
 ```
 
@@ -36,5 +36,5 @@ load balance domain name to be added on the selected route 53
 example:
 
 ```hcl-terraform
-domainName = "services.mulecode.com"
+domain_name = "services.mulecode.com"
 ``` 
