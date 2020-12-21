@@ -10,7 +10,8 @@ module "fargate_service" {
   source = "github.com/mulecode/terraform.git//module/fargate_service"
   service_name = var.service_name
   region = var.region
-  repository = var.repository
+  repository_name = var.repository
+  repository_version = var.repository_tag
   cluster_id = module.context.cluster_id
   vpc_id = module.context.vpc_id
   assign_public_ip = true
