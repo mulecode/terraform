@@ -91,7 +91,7 @@ resource "aws_cloudfront_distribution" "main" {
   }
 
   default_cache_behavior {
-    viewer_protocol_policy = "allow-all"
+    viewer_protocol_policy = var.viewer_protocol_policy
     min_ttl = 0
     default_ttl = 3600
     max_ttl = 86400
