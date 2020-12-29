@@ -1,6 +1,6 @@
 locals {
   s3_origin_id = var.name
-  bucket_name = "${var.name}-${data.aws_caller_identity.current.account_id}"
+  bucket_name = "${var.name}.${var.domain_name}-${data.aws_caller_identity.current.account_id}"
   sub_domain = "${var.name}.${var.domain_name}"
 }
 
