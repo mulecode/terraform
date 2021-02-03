@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 data "aws_ecr_image" "ecr_image" {
-  repository_name = var.service_name
+  repository_name = var.repository_name
   image_tag = var.repository_version
 }
 
@@ -12,7 +12,7 @@ locals {
 [
   {
     "name": "${var.service_name}",
-    "image": "${var.repository_name}:${var.repository_version}@${data.aws_ecr_image.ecr_image.image_digest}",
+    "image": "${var.repository_image}:${var.repository_version}@${data.aws_ecr_image.ecr_image.image_digest}",
     "environment": ${var.environment_variables},
     "logConfiguration": {
         "logDriver": "awslogs",

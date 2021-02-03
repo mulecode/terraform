@@ -4,6 +4,7 @@ variable "cluster_id" {}
 variable "service_name" {}
 variable "region" {}
 variable "repository_name" {}
+variable "repository_image" {}
 variable "repository_version" {
   default = "latest"
 }
