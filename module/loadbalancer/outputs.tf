@@ -9,3 +9,7 @@ output "lb_arn" {
 output "lb_name" {
   value = aws_lb.main.name
 }
+
+output "lb_https_listener" {
+  value = aws_lb_listener.main.arn
+}

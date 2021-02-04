@@ -12,6 +12,7 @@ module "public_lb" {
   subnets = [subnets]
   vpc_id = "VPC ID"
   domain_name = "foo.yourdomain.com"
+  acm_certificate_arn = data.terraform_remote_state.certificates.outputs.acm_certificate_arn
 }
 ```
 
